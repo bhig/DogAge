@@ -10,7 +10,7 @@ abstract class MainActivity : AppCompatActivity() {
 
     lateinit var caixaTexto : EditText
     lateinit var botaoAperte : Button
-    lateinit var textoIdade : TextView
+    lateinit var textoIdadeDog : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,18 +18,18 @@ abstract class MainActivity : AppCompatActivity() {
 
         caixaTexto = findViewById(R.id.editIdadeId)
         botaoAperte = findViewById(R.id.btnApertarId)
-        textoIdade = findViewById(R.id.textResultadoId)
+        textoIdadeDog = findViewById(R.id.textResultadoId)
 
         botaoAperte.setOnClickListener{
             val textoDigitado = caixaTexto.text.toString()
 
             if (textoDigitado.isEmpty()){
-                textoIdade.text = "Nenhum texto digitado"
+                textoIdadeDog.text = "Nenhum texto digitado"
             }else{
                 val valorDigitado = Integer.parseInt(textoDigitado)
                 val resultadoFinal = valorDigitado * 7
 
-                textoIdade.text= "idade do cachorro é :" + resultadoFinal + "anos"
+                textoIdadeDog.text= "idade do cachorro é :" + resultadoFinal + "anos"
             }
         }
     }
